@@ -36,7 +36,6 @@ export async function scrapeAndStoreProduct(productUrl: string) {
                 averagePrice: getAveragePrice(updatedPriceHistory),
             }
         }
-        console.log(product.priceHistory)
         const newProduct = await Product.findOneAndUpdate(
             { url: scrapedProduct.url},
             product,
@@ -105,3 +104,4 @@ export async function addUserEmailToProduct(productId: string, userEmail: string
         console.log(error);
     }
 }
+
